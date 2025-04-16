@@ -1,0 +1,36 @@
+body {
+  background-image: url("bgdesert.jpg");
+}
+
+#demo {
+  background: red;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: inherit;
+  align-items: center;
+  width: 200px;
+  height: 250px;
+  margin: 30px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  border: 20px solid blue;
+  border-radius: 100px;
+  min-height: 100vh;
+  background-image: url("images/gratisography-augmented-reality-800x525.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* img {
+  border: 1px solid #ed0a0a;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  width: 25vw;
+  height: 30vh;
+} */
