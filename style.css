@@ -13,6 +13,12 @@ body {
   height: 250px;
   margin: 30px;
 }
+
+a {
+  text-decoration: none;
+  color: green;
+}
+
 main {
   display: flex;
   justify-content: center;
