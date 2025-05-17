@@ -4,6 +4,12 @@ Dit document bevat een verzameling van veelgebruikte SQL-query's met uitleg over
 
 ---
 
+# Waar staat CRUD voor?
+
+```sql
+CREATE READ UPDATE DELETE
+```
+
 ## Selecteert alle rijen en kolommen uit een tabel
 
 ```sql
@@ -75,16 +81,6 @@ FROM movies;
 
 ---
 
-## Formatteert de release_date als DD/MM/YYYY voor film met id 13
-
-```sql
-SELECT DATE_FORMAT(release_date, '%d/%m/%Y') AS `DD/MM/YYYY`
-FROM movies
-WHERE id = 13;
-```
-
----
-
 ## Geeft een lijst van unieke talen waarin films zijn uitgebracht
 
 ```sql
@@ -103,8 +99,108 @@ SELECT SUM(popularity) FROM movies;
 
 ---
 
-## INNER JOIN
+## JOIN
 
 ```sql
-SELECT movies.title, actors.name FROM movies INNER JOIN actors ON movies.id = actors.movie_id WHERE movies.id < 6;
+SELECT movies.title, actors.name FROM movies JOIN actors ON movies.id = actors.movie_id WHERE movies.id < 6;
+```
+
+---
+
+## Datum formatteren naar dd/mm/jjjj
+
+```sql
+SELECT n_voornaam AS voornaam, Date_Format(N_gebdatum, "%d-%m-%y") AS Datum FROM namen;
+```
+
+---
+
+## BTW uitrekenen doormiddel van een berekening
+
+```sql
+SELECT (a_kosten / 1.21) AS  kosten Excl BTW FROM activiteiten;
+```
+
+---
+
+## Het gemiddelde uitrekenen AVG functie
+
+```sql
+SELECT AVG(a_kosten) FROM activiteiten;
+```
+
+---
+
+## Huidige tijd aangeven
+
+```sql
+SELECT NOW();
+```
+
+```sql
+SELECT CURDATE(), CURTIME();
+```
+
+```sql
+SELECT CURRENT_DATE(), CURRENT_TIME();
+```
+
+---
+
+# Verschil in datum aangeven
+
+```sql
+SELECT DATEDIFF(now(), "2007-04-01");
+```
+
+```sql
+SELECT YEAR(CURRENT_DATE) - YEAR("2007-04-01");
+```
+
+---
+
+## De INSERT INTO statement wordt gebruikt om nieuwe records(rijen) in te voegen in een tabel
+
+```sql
+INSERT INTO activiteiten (a_naam, a_dag, a_kosten) VALUES("Zwemschool Kikkerles", "di", 42.00)
+```
+
+---
+
+## Data wijzigen
+
+```sql
+UPDATE activiteiten SET a_dag = "wo", a_kosten 29,99 WHERE a_naam = "scouting vereneging hallo";
+```
+
+---
+
+## Een record oftwel rij verwijderen
+
+```sql
+DELETE FROM namen WHERE n_voornaam = "Esther" AND n_achternaam = "Gerards;
+```
+
+```sql
+DELETE FROM namen WHERE n_nr = 2;
+```
+
+---
+
+## Alle records binnen een tabel verwijderen zonde de tabel te verwijderen
+
+```sql
+DELETE FROM table_name;
+```
+
+```sql
+DELETE FROM producten;
+```
+
+---
+
+## Met een DROP TABLE statement verwijderen je een tabel
+
+```sql
+DROP TABLE producten;
 ```

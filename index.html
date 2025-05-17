@@ -4,27 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      div > p {
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <!-- <img
-        src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
-        alt=""
-      /> -->
-      <a href=""
-        ><div id="demo">
-          <h1>Hello World!</h1>
-        </div></a
-      >
-    </main>
-    <script src="script.js"></script>
-    <!-- <script>
-      function myFunction() {
-        const node = document.getElementById("demo");
-        const clone = node.cloneNode(true);
-        document.body.appendChild(clone);
-      }
-    </script> -->
+    <div class="container">
+      <p>This will not get styled.</p>
+      <ul>
+        <li>Example item one</li>
+        <li>Example item two</li>
+        <li>Example item three</li>
+      </ul>
+      <p>This will get styled.</p>
+    </div>
+    <p>This will not get styled.</p>
   </body>
 </html>
